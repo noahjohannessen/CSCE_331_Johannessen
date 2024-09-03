@@ -1,3 +1,131 @@
+.poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 body {
     background-color: #ffffff;
+    color: #202124;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "Raleway", sans-serif;
+}
+
+.header {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 4rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 250px auto auto auto;
+    width: 45%;
+}
+
+.header, .box, .button-container {
+    width: 100%;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    color: #202124;
+    height: 8rem;
+    border-radius: 10px;
+}
+
+.toggle-switch {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 50px;
+    height: 26px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cccccc;
+    transition: .4s;
+    border-radius: 26px;
+}
+
+.switch::before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ffffff;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .switch {
+    background-color: #2196F3;
+}
+
+input:checked + .switch::before {
+    transform: translateX(24px);
+    background-color: #f7b500;
+}
+
+a {
+    color: inherit;
+}
+
+.button {
+    background-color: #eeeeee;
+    color: #202124;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    flex-grow: 1;
+    margin: 10px;
+}
+
+.button a {
+    color: #202124;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #dddddd;
+}
+
+.button:first-child {
+    margin-left: 0;
+}
+
+.button:last-child {
+    margin-right: 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px auto;
+    height: 8rem;
 }
