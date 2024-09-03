@@ -1,13 +1,53 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <link rel="stylesheet" href="dark.css" id="style">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <title>Portfolio</title>
-  </head>
-  <body>
-    
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="dark.css" id="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Portfolio</title>
+</head>
+<body>
+  <div class="home-button">
+    <a href="index.html">🏠</a>
+  </div>
+  <div class="toggle-switch">
+    <input type="checkbox" id="theme-toggle" hidden/>
+    <label for="theme-toggle" class="switch"></label>
+  </div>
+
+  <div class="subpage-container">
+    <div class="subpage-header">My Projects 🚀</div>
+    <div class="project">
+      <div class="project-thumbnail">
+        <img src="images/Notepad.png">
+      </div>
+      <div class="project-description">
+        <h3>AggieScribe</h3>
+        <p>Description of AggieScribe.</p>
+      </div>
+    </div>
+    <div class="project reverse">
+      <div class="project-thumbnail">
+        <img src="images/piano.png">
+      </div>
+      <div class="project-description">
+        <h3>ChordLab</h3>
+        <p>Description of ChordLab.</p>
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-thumbnail">
+        <img src="images/splash0.png">
+      </div>
+      <div class="project-description">
+        <h3>Choppy</h3>
+        <p>Description of Choppy.</p>
+      </div>
+    </div>
+  </div>
   <script src="theme.js"></script>
-  </body>
+</body>
 </html>

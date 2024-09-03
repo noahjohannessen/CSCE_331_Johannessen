@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <link rel="stylesheet" href="dark.css" id="style">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Noah's Home Page</title>
-  </head>
-  <body>
-    <div class="toggle-switch">
-      <input type="checkbox" id="theme-toggle" hidden/>
-      <label for="theme-toggle" class="switch"></label>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="dark.css" id="style">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Noah's Home Page</title>
+</head>
+<body>
+  <div class="home-button">
+    <a href="index.html">🏠</a>
+  </div>
+  <div class="toggle-switch">
+    <input type="checkbox" id="theme-toggle" hidden/>
+    <label for="theme-toggle" class="switch"></label>
+  </div>
+
+  <div class="container">
+    <div class="header">Nice to meet you! 👋</div>
+    <p>I'm Noah. I like to solve problems. Note for grader: click text on buttons, working on solving this problem :)</p>
+    <div class="box">
+      <p>Please do <a href="mailto:njohannessen@tamu.edu" target="_blank">introduce yourself</a> - no need for a reason!</p>
     </div>
-  
-    <div class="container">
-      <div class="header">Nice to meet you! 👋</div>
-      <p>I'm Noah. I like to solve problems.</p>
-      <div class="box">
-        <p>Please do <a href="mailto:njohannessen@tamu.edu" target="_blank">introduce yourself</a> - no need for a reason!</p>
-      </div>
-      <div class="button-container">
-        <button class="button"><a href="portfolio.html">My work 💻</a></button>
-        <button class="button"><a href="qualifications.html">Why me? ⭐</a></button>
-        <button class="button"><a href="service.html">Giving back 🌱</a></button>
-        <button class="button"><a href="ai.html">AI Fun! 🤖</a></button>
-      </div>
+    <div class="button-container">
+      <button class="button"><a href="portfolio.html">My work 💻</a></button>
+      <button class="button"><a href="qualifications.html">Why me? ⭐</a></button>
+      <button class="button"><a href="service.html">Giving back 🌱</a></button>
+      <button class="button"><a href="ai.html">AI Fun! 🤖</a></button>
     </div>
-    <script src="theme.js"></script>
-  </body>
+  </div>
+  <script src="theme.js"></script>
+</body>
 </html>
