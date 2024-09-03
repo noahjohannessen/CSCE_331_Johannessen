@@ -1,12 +1,123 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<html lang="en">
+<head>
     <link rel="stylesheet" href="dark.css" id="style">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     <title>AI Fun!</title>
-  </head>
-  <body>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow: hidden; /* Hide overflow to allow animations to flow outside viewable area */
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        .dream {
+            position: absolute;
+            font-size: 24px;
+            animation: floatAnimation 10s linear infinite;
+            white-space: nowrap;
+        }
+        @keyframes floatAnimation {
+            from {
+                transform: translateX(100vw);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+        .prompt-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            z-index: -1;
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div id="dreamContainer"></div>
+    <div class="prompt-box">
+        This AI visualizes dreams using randomly generated scenarios. Each dream combines a subject from a list including elements like 'A rogue AI', 'An alien diplomat', etc., with an action such as 'manipulates', 'transforms', etc., and an object like 'quantum realities', 'forgotten histories', etc.
+    </div>
+    <script src="theme.js"></script>
+    <script>
+        function createDream() {
+          const subjects = [
+              'A vegan vampire', 'An opera-singing werewolf', 'A disco-loving dictator', 'A ninja accountant', 'A time-traveling barista',
+              'A conspiracy theorist cat', 'A pirate parrot', 'A yogi bear', 'A melodramatic AI', 'A fortune-telling goldfish',
+              'A moonwalking astronaut', 'A karaoke superstar alien', 'A juggling philosopher', 'A skateboarding monk', 'A gossiping ghost',
+              'A salsa dancing scientist', 'A cooking show host robot', 'A rapping historian', 'A daydreaming dragon', 'A sneezing sorcerer',
+              'A paranoid android', 'A flirtatious physicist', 'A moody mermaid', 'A breakdancing Buddha', 'A clumsy cupid',
+              'A selfie-taking sphinx', 'A surfing samurai', 'A gardening gnome', 'A baking barbarian', 'A knitting ninja',
+              'A sarcastic psychic', 'A jogging jurist', 'A beatboxing bishop', 'A gaming grandma', 'A tap-dancing tyrannosaur',
+              'A neurotic knight', 'A singing siren', 'A cynical cyborg', 'A mischievous muse', 'A vlogging vampire',
+              'A poetic penguin', 'A hyperactive hydra', 'A monologuing mummy', 'A pun-loving phoenix', 'A reality-show-obsessed reaper',
+              'An improv artist imp', 'An awkward astronaut', 'A lobbying leprechaun', 'A whimsical wizard', 'A trivial troll'
+          ];
 
-  </body>
+
+          const actions = [
+              'bakes', 'sings off-key to', 'unintentionally insults', 'falls in love with', 'starts a dance-off with',
+              'accidentally teleports', 'sleepwalks into', 'gets stuck in', 'cries over', 'laughs at',
+              'throws a pie at', 'takes selfies with', 'writes a dubious thesis on', 'hosts a podcast about', 'gets trapped in a video game with',
+              'photobombs', 'twerks on', 'facepalms at', 'has a secret handshake with', 'starts a food fight with',
+              'gives a TED Talk on', 'drunkenly explains', 'bargains poorly with', 'fan-girls over', 'builds a dysfunctional rocket with',
+              'adopts', 'ghosts', 'shares conspiracy theories with', 'gets fashion tips from', 'invests in',
+              'complains about', 'crashes a wedding with', 'loses at chess to', 'exchanges awkward glances with', 'goes on a blind date with',
+              'attempts yoga with', 'mixes up', 'can’t stop staring at', 'tries to train', 'orders a pizza with',
+              'forgets the birthday of', 'writes an angry letter to', 'gets haunted by', 'spends a fortune on', 'tries to impress'
+          ];
+
+
+          const objects = [
+              'an invisible cloak', 'a talking tree', 'a magical flying carpet', 'a portal to Narnia', 'an enchanted rubber duck',
+              'a UFO shaped like a donut', 'a zombie-proof bunker', 'a bottomless cup of coffee', 'a cake that never ends', 'a shampoo bottle',
+              'Santa’s sleigh', 'the Fountain of Youth', 'a secret spice from Mars', 'the last slice of pizza', 'a peculiar penguin',
+              'a golden toilet', 'the Internet’s off switch', 'a time machine stuck in the 80s', 'a sneezing statue', 'an echoless chamber',
+              'the meaning of life (in a fortune cookie)', 'an overcooked spaghetti monster', 'a lazy laser beam', 'a politically correct parrot', 'an emoji spellbook',
+              'a conspiracy theorist’s diary', 'a self-aware soap opera', 'the world’s smallest violin', 'a mood ring stuck on "meh"', 'a sock that eats other socks',
+              'a water gun filled with tears', 'a reality-distorting mirror', 'a kale smoothie of immortality', 'a haunted hashtag', 'a vegan meatloaf',
+              'a breakup letter from the Internet', 'a lost Atlantis travel guide', 'a bored oracle', 'a map to nowhere', 'a glitchy gravity gun',
+              'an awkward hug', 'a dance battle trophy', 'a misunderstood metaphor', 'a diary full of dad jokes', 'an alien’s autobiography'
+          ];
+
+
+
+          const subject = subjects[Math.floor(Math.random() * subjects.length)];
+          const action = actions[Math.floor(Math.random() * actions.length)];
+          const object = objects[Math.floor(Math.random() * objects.length)];
+
+          return `${subject} ${action} ${object}`;
+      }
+
+
+        function displayDream() {
+            const dreamContainer = document.getElementById('dreamContainer');
+            const dreamElement = document.createElement('div');
+            dreamElement.classList.add('dream');
+            dreamElement.style.top = `${Math.random() * (window.innerHeight - 40)}px`; // Position dream randomly in the vertical space
+            dreamElement.textContent = createDream();
+            dreamContainer.appendChild(dreamElement);
+
+            // Remove the dream after it animates across the screen
+            setTimeout(() => {
+                dreamContainer.removeChild(dreamElement);
+            }, 10000); // matches animation duration
+        }
+
+        setInterval(displayDream, 2000); // Create a new dream every 3 seconds
+    </script>
+</body>
 </html>
